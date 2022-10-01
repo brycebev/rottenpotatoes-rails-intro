@@ -17,11 +17,13 @@ class MoviesController < ApplicationController
         @ratings_to_show = Movie.all_ratings
         @movies = Movie.all
       end
-      sort = params[:sorted] || session[:sorted]
-      if sort == "title"
+      puts "important"
+      puts session[:sorted]
+      session[:sorted] ||= params[:sorted]
+      if session[:sorted] == "title"
         @movies = @movies.sort_by { |movie| movie.title }
         @sort_column = 'title'
-      elsif sort == "date"
+      elsif session[:sorted] == "date"
         @movies = @movies.sort_by { |movie| movie.release_date }
         @sort_column = 'date'
       end
