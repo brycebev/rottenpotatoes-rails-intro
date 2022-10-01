@@ -21,7 +21,7 @@
         <%= link_to 'Movie Title', movies_path(:sorted => 'title', :ratings => Hash[@ratings_to_show.collect { |item| [item, "1"] } ]), id: "title_header", :class => @movie_class%>
       </th>
       <th>Rating</th>
-      <th = @release_date_class>
+      <th>
         <%= link_to "Release Date", movies_path(:sorted => "date", :ratings => Hash[@ratings_to_show.collect { |item| [item, "1"] } ]), id: 'release_date_header', :class => @release_date_class%>
       </th>
       <th>More Info</th>
