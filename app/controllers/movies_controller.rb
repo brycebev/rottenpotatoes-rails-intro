@@ -22,10 +22,10 @@ class MoviesController < ApplicationController
       session[:sorted] ||= params[:sorted]
       if session[:sorted] == "title"
         @movies = @movies.sort_by { |movie| movie.title }
-        @sort_column = 'title'
+        @movie_class = "p-3 mb-2 bg-warning text-dark"
       elsif session[:sorted] == "date"
         @movies = @movies.sort_by { |movie| movie.release_date }
-        @sort_column = 'date'
+        @release_date_class = "p-3 mb-2 bg-warning text-dark"
       end
     end
     
