@@ -11,11 +11,14 @@ class MoviesController < ApplicationController
       if not params[:ratings].nil?
         @ratings_to_show = params[:ratings].keys
         @movies = Movie.with_ratings(@ratings_to_show)
+        
       else
         @ratings_to_show = Movie.all_ratings
         @movies = Movie.all
       end
+      puts @movies
     end
+    
   
     def new
       # default: render 'new' template
