@@ -20,7 +20,7 @@ class MoviesController < ApplicationController
       if params[:sorted] == "title"
         @movies = @movies.sort_by { |movie| movie.title }
         @movie_class = 'hilite p-3 mb-2 bg-warning text-dark'
-      else params[:sorted] == "date"
+      elsif params[:sorted] == "date"
         @movies = @movies.sort_by { |movie| movie.release_date }
         @release_date_class = 'hilite p-3 mb-2 bg-warning text-dark'
       end
