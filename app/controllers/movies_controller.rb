@@ -19,7 +19,8 @@ class MoviesController < ApplicationController
       end
       puts "important"
       puts session[:sorted]
-      session[:sorted] ||= params[:sorted]
+      if not params[:sorted].nil?
+        session[:sorted] = params[:sorted]
       if session[:sorted] == "title"
         @movies = @movies.sort_by { |movie| movie.title }
         @movie_class = "hilite p-3 mb-2 bg-warning text-dark"
