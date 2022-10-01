@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
     def index
       @all_ratings = Movie.all_ratings
       @movie_class = 'hilite'
-      @release_date_class = 'hilite p-3 mb-2 bg-warning text-dark'
+      @release_date_class = 'hilite'
       if not params[:ratings].nil?
         @ratings_to_show = params[:ratings].keys
         @movies = Movie.with_ratings(@ratings_to_show)

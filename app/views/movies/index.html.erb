@@ -19,7 +19,7 @@
   <thead>
     <tr>
       <th class = @movie_class>
-        <%= link_to "Movie Title", movies_path(:sorted => "title"), id: 'title_header'%>
+        <%= link_to "Movie Title", movies_path(:sorted => "title"), id: 'title_header', :class => @movie_class%>
       </th>
       <th>Rating</th>
       <th class = @release_date_class>
