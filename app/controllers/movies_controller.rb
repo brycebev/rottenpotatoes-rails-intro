@@ -24,7 +24,6 @@ class MoviesController < ApplicationController
         @movies = @movies.sort_by { |movie| movie.release_date }
         @release_date_class = 'hilite p-3 mb-2 bg-warning text-dark'
       end
-      puts @movies 
     end
     
   
