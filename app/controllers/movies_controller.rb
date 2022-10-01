@@ -17,6 +17,7 @@ class MoviesController < ApplicationController
         @ratings_to_show = Movie.all_ratings
         @movies = Movie.all
       end
+      @ratings_hash = Hash[@ratings_to_show.collect { |item| [item, "1"] } ]
       if params[:sorted] == "title"
         @movies = @movies.sort_by { |movie| movie.title }
         @movie_class = 'hilite p-3 mb-2 bg-warning text-dark'
