@@ -16,7 +16,7 @@ class MoviesController < ApplicationController
         @ratings_to_show = Movie.all_ratings
         @movies = Movie.all
       end
-      puts @movies
+      puts @movies 
     end
     
   
