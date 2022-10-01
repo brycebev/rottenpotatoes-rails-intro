@@ -11,10 +11,14 @@ class MoviesController < ApplicationController
       if not params[:ratings].nil?
         @ratings_to_show = params[:ratings].keys
         @movies = Movie.with_ratings(@ratings_to_show)
-        
       else
         @ratings_to_show = Movie.all_ratings
         @movies = Movie.all
+      end
+      if params[:sorted] == "title"
+        @movies = @movies.sort_by { |movie| movie.title }
+      else params[:sorted] == "date"
+        @movies = @movies.sort_by { |movie| movie.release_date }
       end
       puts @movies 
     end
