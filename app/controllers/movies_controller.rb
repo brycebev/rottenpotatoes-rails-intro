@@ -17,10 +17,11 @@ class MoviesController < ApplicationController
         @ratings_to_show = Movie.all_ratings
         @movies = Movie.all
       end
-      if params[:sorted] == "title"
+      sort = params[:sorted] || session[:sorted]
+      if sort == "title"
         @movies = @movies.sort_by { |movie| movie.title }
         @movie_class = 'hilite p-3 mb-2 bg-warning text-dark'
-      elsif params[:sorted] == "date"
+      elsif sort == "date"
         @movies = @movies.sort_by { |movie| movie.release_date }
         @release_date_class = 'hilite p-3 mb-2 bg-warning text-dark'
       end
