@@ -18,8 +18,8 @@
 <table class="table table-striped col-md-12" id="movies">
   <thead>
     <tr>
-      <th, :class => 'hilite', , :class => 'p-3 mb-2 bg-warning text-dark'>
-        <%= link_to "Movie Title", movies_path(:sorted => "title"), id: 'title_header' %>
+      <th>
+        <%= link_to "Movie Title", movies_path(:sorted => "title"), id: 'title_header', :class => 'hilite', :class => 'p-3 mb-2 bg-warning text-dark' %>
       </th>
       <th>Rating</th>
       <th>
