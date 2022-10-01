@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
   
     def index
       @all_ratings = Movie.all_ratings
-      
+      @movie_class = 'hilite'
       @release_date_class = 'hilite'
       if not params[:ratings].nil?
         @ratings_to_show = params[:ratings].keys
@@ -22,10 +22,10 @@ class MoviesController < ApplicationController
       session[:sorted] ||= params[:sorted]
       if session[:sorted] == "title"
         @movies = @movies.sort_by { |movie| movie.title }
-        @movie_class = "p-3 mb-2 bg-warning text-dark"
+        @movie_class = "hilite p-3 mb-2 bg-warning text-dark"
       elsif session[:sorted] == "date"
         @movies = @movies.sort_by { |movie| movie.release_date }
-        @release_date_class = "p-3 mb-2 bg-warning text-dark"
+        @release_date_class = "hilite p-3 mb-2 bg-warning text-dark"
       end
     end
     
