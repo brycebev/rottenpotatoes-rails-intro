@@ -20,10 +20,10 @@ class MoviesController < ApplicationController
       puts "important"
       puts session[:sorted]
       session[:sorted] ||= params[:sorted]
-      if session[:sorted] == "title"
+      if params[:sorted] == "title"
         @movies = @movies.sort_by { |movie| movie.title }
         @movie_class = "hilite p-3 mb-2 bg-warning text-dark"
-      elsif session[:sorted] == "date"
+      elsif params[:sorted] == "date"
         @movies = @movies.sort_by { |movie| movie.release_date }
         @release_date_class = "hilite p-3 mb-2 bg-warning text-dark"
       end
