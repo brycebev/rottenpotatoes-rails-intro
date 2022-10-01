@@ -17,8 +17,8 @@
 <table class="table table-striped col-md-12" id="movies">
   <thead>
     <tr>
-      <th class = @movie_class>
-        <%= link_to 'Movie Title', movies_path(:sorted => 'title', :ratings => Hash[@ratings_to_show.collect { |item| [item, "1"] } ]), id: "title_header"%>
+      <th class>
+        <%= link_to 'Movie Title', movies_path(:sorted => 'title', :ratings => Hash[@ratings_to_show.collect { |item| [item, "1"] } ]), id: "title_header", :class => @movie_class%>
       </th>
       <th>Rating</th>
       <th = @release_date_class>
