@@ -8,6 +8,8 @@ class MoviesController < ApplicationController
   
     def index
       @all_ratings = Movie.all_ratings
+      @movie_class = 'hilite'
+      @release_date_class = 'hilite'
       if not params[:ratings].nil?
         @ratings_to_show = params[:ratings].keys
         @movies = Movie.with_ratings(@ratings_to_show)
@@ -17,8 +19,10 @@ class MoviesController < ApplicationController
       end
       if params[:sorted] == "title"
         @movies = @movies.sort_by { |movie| movie.title }
+        @movie_class = 'hilite p-3 mb-2 bg-warning text-dark'
       else params[:sorted] == "date"
         @movies = @movies.sort_by { |movie| movie.release_date }
+        @release_date_class = 'hilite p-3 mb-2 bg-warning text-dark'
       end
       puts @movies 
     end
