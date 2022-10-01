@@ -4,8 +4,8 @@ class Movie < ActiveRecord::Base
   end
 
   def self.all_ratings
-    puts "hello"
     nums = Array.[](1, 2, 3, 4,5)
+    puts nums
     nums
   end
 end
