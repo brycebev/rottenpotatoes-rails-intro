@@ -3,7 +3,7 @@ class Movie < ActiveRecord::Base
     Movie.where(ratings_list.inclue? rating)
   end
 
-  def all_ratings
-    ['G','PG','PG-13','R']
+  def self.all_ratings
+    return ['G','PG','PG-13','R']
   end
 end
