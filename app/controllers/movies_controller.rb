@@ -17,9 +17,10 @@ class MoviesController < ApplicationController
         @ratings_to_show = Movie.all_ratings
         @movies = Movie.all
       end
-      puts "important"
-      puts session[:sorted]
-      session[:sorted] ||= params[:sorted]
+      
+      
+      # if session[:sorted] = params[:sorted]
+      
       if params[:sorted] == "title"
         @movies = @movies.sort_by { |movie| movie.title }
         @movie_class = "hilite p-3 mb-2 bg-warning text-dark"
