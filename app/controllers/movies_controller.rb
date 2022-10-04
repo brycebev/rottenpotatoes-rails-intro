@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
     end
   
     def index
+      puts params[:home]
       if params[:home] == 1
         puts "BALLS"
         session[:ratings] = params[:ratings]
