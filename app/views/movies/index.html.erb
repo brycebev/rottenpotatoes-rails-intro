@@ -9,7 +9,7 @@
       <%= check_box_tag "ratings[#{rating}]", "1",  @ratings_to_show.include?(rating), class: 'form-check-input' %>
     </div>
   <% end %>
-  <%= f.hidden_field :sorted, value: @sorted %>
+  <%= hidden_field :sorted, value: @sorted %>
   <%= submit_tag 'Refresh', id: 'ratings_submit', class: 'btn btn-primary' %>
 <% end %>
 
