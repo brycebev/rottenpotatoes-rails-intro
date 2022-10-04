@@ -20,7 +20,7 @@ class MoviesController < ApplicationController
       
       
       # if session[:sorted] = params[:sorted]
-      
+      @sorted = params[:sorted]
       if params[:sorted] == "title"
         @movies = @movies.sort_by { |movie| movie.title }
         @movie_class = "hilite p-3 mb-2 bg-warning text-dark"
