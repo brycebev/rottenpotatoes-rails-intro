@@ -1,7 +1,7 @@
 class Movie < ActiveRecord::Base
   def self.with_ratings(ratings_list)
-    puts '@rating'
-    puts :rating
+    # puts '@rating'
+    # puts :rating
     Movie.where(rating: ratings_list)
   end
 
